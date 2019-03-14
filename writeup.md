@@ -61,22 +61,22 @@ There were a few spots where the vehicle fell off the track, especially the turn
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 74-88) consisted of a convolution neural network with the following layers and layer sizes | Layer         		|     Description	        					| 
+The final model architecture (model.py lines 74-88) consisted of a convolution neural network with the following layers and layer sizes | Layer         	    	|     Description	        	                		| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 160x320x3 YUV image   							| 
-| lambda    	| x/255.0-0.5 	|
-| Cropping					|				(75,20),(0,0)								|
-| Convolution 5x5    | 24,5,5, subsample = (2,2), activation="relu" 				|
+| Input         		    | 160x320x3 YUV image   					           		| 
+| lambda    	          | x/255.0-0.5                                   |
+| Cropping			     		|				(75,20),(0,0)						            		|
+| Convolution 5x5       | 24,5,5, subsample = (2,2), activation="relu" 	|
 | Convolution 5x5     	| 36,5,5, subsample = (2,2), activation="relu" 	|
-| Convolution 5x5					|			subsample = (2,2), activation="relu"									|
-| Convolution 3x3	    | 64,3,3, activation="relu" 					|
-| Convolution 3x3			| 64,3,3, activation="relu" 									|
-| dropout		| Keep probability 0.8								|
-| flatten()		| 									|
-| Fully connected				| outputs 640							|
-| Fully connected		| outputs 100  									|
-|Fully connected			|				outputs 50  								|
-| Fully connected		| outputs 1									|
+| Convolution 5x5				|			subsample = (2,2), activation="relu"		  |
+| Convolution 3x3       | 64,3,3, activation="relu" 				          	|
+| Convolution 3x3		  	| 64,3,3, activation="relu" 								  	|
+| dropout		            | Keep probability 0.8					          			|
+| flatten()	          	| 									                            |
+| Fully connected				| outputs 640						                      	|
+| Fully connected		    | outputs 100  						                			|
+|Fully connected		  	|				outputs 50  					             			|
+| Fully connected		    | outputs 1								                    	|
 
 
 
