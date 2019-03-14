@@ -61,44 +61,28 @@ There were a few spots where the vehicle fell off the track, especially the turn
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 74-88) consisted of a convolution neural network with the following layers and layer sizes | Layer         		|     Description									| 
-|:---------------------:|:-------------------------------------------------:| 
-| Input         		| 160x320x3 YUV image   							| 
-| lambda    			| x/255.0-0.5              							|
-| Cropping				|(75,20),(0,0)										|
-| Convolution 5x5   	| 24,5,5, subsample = (2,2), activation="relu" 		|
-| Convolution 5x5   	| 36,5,5, subsample = (2,2), activation="relu" 		|
-| Convolution 5x5		|subsample = (2,2), activation="relu"				|
-| Convolution 3x3   	| 64,3,3, activation="relu" 						|
-| Convolution 3x3		| 64,3,3, activation="relu" 						|
-| dropout				| Keep probability 0.8								|
-| flatten()				| 													|
-| Fully connected		| outputs 640										|
-| Fully connected		| outputs 100  										|
-|Fully connected		| outputs 50  										|
-| Fully connected		| outputs 1											|
+The final model architecture (model.py lines 74-88) consisted of a convolution neural network with the following layers and layer sizes 
 
-
-
-
-| Layer         		|     Description	        					| 
+| Layer         		|     Description								| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x1 gray image   							| 
-| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x32 	|
-| RELU					|												|
-| Max pooling	(x1)    | 2x2 stride,  outputs 14x14x32 				|
-| Convolution 5x5     	| 1x1 stride, valid padding, outputs 10x10x64 	|
-| RELU					|												|
-| Max pooling (x2)	    | 2x2 stride,  outputs 5x5x64 					|
-| flatten(x1)			| outputs 6272 									|
-| flatten(x2)			| outputs 1600 									|
-| concat(x1 + x2)		| outputs 7872 									|
+| Input         		| 160x320x3 YUV image   						| 
+| lambda    			| x/255.0-0.5              						|
+| Cropping				|(75,20),(0,0)									|
+| Convolution 5x5   	| 24,5,5, subsample = (2,2), activation="relu" 	|
+| Convolution 5x5   	| 36,5,5, subsample = (2,2), activation="relu" 	|
+| Convolution 5x5		|subsample = (2,2), activation="relu"			|
+| Convolution 3x3   	| 64,3,3, activation="relu" 					|
+| Convolution 3x3		| 64,3,3, activation="relu" 					|
 | dropout				| Keep probability 0.8							|
-| Fully connected		| outputs 300  									|
-| RELU					|												|
-| Fully connected		| outputs 120  									|
-| RELU					|												|
-| Fully connected		| outputs 43  									|
+| flatten()				| 												|
+| Fully connected		| outputs 640									|
+| Fully connected		| outputs 100  									|
+| Fully connected		| outputs 50  									|
+| Fully connected		| outputs 1										|
+
+
+
+
 
 #### 3. Creation of the Training Set & Training Process
 
