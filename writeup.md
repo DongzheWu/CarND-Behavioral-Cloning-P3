@@ -91,8 +91,8 @@ To capture good driving behavior, I first recorded two laps on track one using c
 ![image](./center.jpg)
 
 I then added images recorded by right and left cameras. So the vehicle will learn how to control the steer in different positions which is further off the center line.
-![image](./center.jpg)
-![image](./center.jpg)
+![image](./left.jpg)
+![image](./right.jpg)
 
 To augment the data set, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
