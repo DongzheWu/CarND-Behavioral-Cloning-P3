@@ -89,24 +89,17 @@ The final model architecture (model.py lines 74-88) consisted of a convolution n
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
 ![image](./center.jpg)
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+I then added images recorded by right and left cameras. So the vehicle will learn how to control the steer in different positions which is further off the center line.
+![image](./center.jpg)
+![image](./center.jpg)
 
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data set, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
 ![alt text][image6]
 ![alt text][image7]
 
-Etc ....
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. 
+The ideal number of epochs was 3 because I tried 10 epochs and 5 epochs, the mean squared error loss on validation data set became worse and the model was overfitting. For the batch size, I set it to 8. I used flipped images and images recorded by right and left cameras. Although the generator only read 8 lines from .csv file every time, it actually generates 48 images to feed to the model. The model I trained runs well, it drives around track without leaving the road. However, my model is still unstable, sometimes it cannot be trained well, even if using the same parameters and the same architecture. Another place I need to improve is that the speed of autonomous vehicle controlled by my model is always between 8 mph and 11 mph. I tried to change architecture and parameters, it didn’t work. 
