@@ -101,7 +101,8 @@ I then added images recorded by right and left cameras. So the vehicle will lear
 To augment the data set, I also flipped images and angles thinking that this would generate more different data to learn.
 For example, here is an image that has then been flipped:
 
-![alt text][image6]
+![image](./center.jpg)
+![image](./flipedcenter.jpg)
 
 
 I finally randomly shuffled the data set and put 20% of the data into a validation set. 
